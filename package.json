@@ -12,5 +12,14 @@
   "type": "commonjs",
   "dependencies": {
     "angular": "^1.8.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manvithagowda019-lang/Manvitha-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manvithagowda019-lang/Manvitha-/issues"
+  },
+  "homepage": "https://github.com/manvithagowda019-lang/Manvitha-#readme"
 }
