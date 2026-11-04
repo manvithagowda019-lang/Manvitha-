@@ -1,22 +1,39 @@
-var app = angular.module('myApp', []);
+/* 
+  Full Name: [Your Full Name]
+  Department: [Your Department]
+*/
 
-//parent controller
+var app = angular.module('studentApp', []);
 
-app.controller('CollegeController', function($scope) {
-    $scope.collegeName = "MIT college";
-});
+// Parent Controller
+app.controller('CollegeController', ['$scope', function($scope) {
+    $scope.collegeName = "Maharaja Institute of Technology";
+}]);
 
-//child controller
+// Child Controller
+app.controller('StudentController', ['$scope', function($scope) {
+    // Initial array containing at least three sample student names
+    $scope.students = ['Mahalakshmi', 'Neelashree', 'Lakshmi'];
 
-app.controller(
-    "StudentController", function($scope) {
-        $scope.name = "Darshan S";
-        $scope.department = "Electorics Science";
-        $scope.semester = 3;
+    // Initial visibility state for details section (hidden by default)
+    $scope.showDetails = false;
 
-        //aray
-        $scope.students =[
-            "MANVITHA",
-        ];
-    }
-);
+    // Toggle function for show/hide details
+    $scope.toggleDetails = function() {
+        $scope.showDetails = !$scope.showDetails;
+    };
+
+    // Add student function using ng-click
+    $scope.addStudent = function() {
+        if ($scope.inputName && $scope.inputName.trim() !== "") {
+            // Push name (or formatted details) to the list
+            let studentInfo = $scope.inputName + ($scope.inputDepartment ? " (" + $scope.inputDepartment + ")" : "");
+            $scope.students.push(studentInfo);
+
+            // Clear the name input (and other inputs if desired) after adding
+            $scope.inputName = "";
+            $scope.inputDepartment = "";
+            $scope.inputSemester = "";
+        }
+    };
+}]);
