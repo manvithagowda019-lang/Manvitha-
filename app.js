@@ -10,8 +10,8 @@ app.controller('CollegeController', function($scope) {
 
 app.controller(
     "StudentController", function($scope) {
-        $scope.name = "Dhanush";
-        $scope.department = "Computer Science";
+        $scope.name = "Darshan S";
+        $scope.department = "Electorics Science";
         $scope.semester = 3;
 
         //aray
